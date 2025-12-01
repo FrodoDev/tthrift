@@ -1,0 +1,20 @@
+// .devcontainer/devcontainer.json
+{
+    "name": "Thrift Learning Environment",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "tthrift",
+    "workspaceFolder": "/work",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.Go"
+            ],
+            "settings": {
+                "go.gopath": "/go",
+                "go.toolsManagement.checkForUpdates": "local",
+                "go.useLanguageServer": true
+            }
+        }
+    },
+    "postCreateCommand": "go version && thrift --version"
+}

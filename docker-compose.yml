@@ -1,0 +1,15 @@
+# docker-compose.yml
+services:
+  tthrift:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tthrift-env
+    volumes:
+      - .:/work
+      - go-modules-cache:/go/pkg/mod
+    tty: true
+    stdin_open: true
+
+volumes:
+  go-modules-cache:
