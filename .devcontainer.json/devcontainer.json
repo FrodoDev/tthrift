@@ -1,7 +1,7 @@
 // .devcontainer/devcontainer.json
 {
     "name": "Thrift Learning Environment",
-    "dockerComposeFile": "../docker-compose.yml",
+    "dockerComposeFile": "../docker/docker-compose.yml",
     "service": "tthrift",
     "workspaceFolder": "/work",
     "customizations": {

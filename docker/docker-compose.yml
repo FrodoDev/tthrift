@@ -6,10 +6,11 @@ services:
       dockerfile: Dockerfile
     container_name: tthrift-env
     volumes:
-      - .:/work
+      - ../:/work
       - go-modules-cache:/go/pkg/mod
     tty: true
     stdin_open: true
+    working_dir: /work # 设置容器启动后的默认工作目录为/work
 
 volumes:
   go-modules-cache:
