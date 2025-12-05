@@ -24,6 +24,9 @@ RUN curl -OL https://golang.google.cn/dl/go1.25.4.linux-amd64.tar.gz && \
     tar -C /usr/local -xzf go1.25.4.linux-amd64.tar.gz && \
     rm go1.25.4.linux-amd64.tar.gz
 
+ENV CGO_ENABLED=0
+ENV GOOS=linux
+ENV GOARCH=amd64
 ENV PATH="/usr/local/go/bin:${PATH}"
 ENV GOPROXY="https://goproxy.cn,direct"
 ENV GO111MODULE="on"

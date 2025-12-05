@@ -22,3 +22,20 @@ clean:
 	docker system prune -f
 
 rebuild: down up status
+
+## 以下是编译运行的命令
+.PHONY: builds buildc runs runc brs brc
+builds:
+	go build -o bin/server ./servers/server
+
+buildc:
+	go build -o bin/client ./servers/client
+
+runs:
+	./bin/server
+
+runc:
+	./bin/client
+
+brs: builds runs
+brc: buildc runc
